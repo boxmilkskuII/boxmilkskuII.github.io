@@ -100,8 +100,12 @@
             star.style.width = Math.random() * 5 + "px";
             star.style.height = star.style.width;
             star.style.top = Math.random() * window.innerHeight + "px";
-            star.style.left = Math.random() * window.innerWidth + "px";
+            star.style.left = window.innerWidth + "px";
             container.appendChild(star);
+
+            setTimeout(() => {
+                star.style.left = "-100px";
+            }, 100);
         }
 
         function moveSpace(event) {
