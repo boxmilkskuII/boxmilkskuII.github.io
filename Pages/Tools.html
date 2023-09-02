@@ -1,1 +1,79 @@
-soon
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Code Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        pre {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: left;
+            font-size: 14px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Code Extractor</h1>
+    <p>Enter a website URL to extract its HTML code:</p>
+    <input type="text" id="urlInput" placeholder="Enter URL">
+    <button onclick="extractHTML()">Extract HTML</button>
+    <pre id="htmlCode"></pre>
+
+    <script>
+        function extractHTML() {
+            const url = document.getElementById("urlInput").value;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("htmlCode").textContent = html;
+                })
+                .catch(error => {
+                    document.getElementById("htmlCode").textContent = "Error fetching HTML code.";
+                });
+        }
+    </script>
+</body>
+</html>
