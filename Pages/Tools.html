@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>QR Code Generator</title>
+    <title>boxmilkskull | QR Code Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,29 +15,6 @@
 
         a {
             text-decoration: none;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-            padding: 1em 0;
-            border-bottom: 1px solid #007bff;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 0.5em;
         }
 
         .container {
@@ -64,15 +41,6 @@
 
         .section p {
             font-size: 1.2em;
-        }
-
-        footer {
-            margin-top: 50px; 
-            text-align: center;
-            background-color: #121212;
-            color: #ffffff;
-            padding: 1em 0;
-            border-top: 1px solid #007bff;
         }
 
         .qr-container {
@@ -131,10 +99,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>QR Code Generator</h1>
-        <p>Enter text or URL to generate a QR code:</p>
-    </header>
     <div class="container">
         <div class="qr-container">
             <div class="url-input-container">
@@ -146,9 +110,6 @@
             <div class="qr-code" id="qrcode"></div>
         </div>
     </div>
-    <footer>
-        &copy; 2023 QR Code Generator
-    </footer>
 
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
