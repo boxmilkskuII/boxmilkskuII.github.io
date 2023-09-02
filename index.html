@@ -40,7 +40,6 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            animation: rotateStars 20s linear infinite;
         }
         
         .star {
@@ -48,7 +47,7 @@
             background-color: white;
             border-radius: 50%;
             pointer-events: none;
-            animation: blink 2s infinite alternate, moveStars 10s linear infinite;
+            animation: rotateStar 5s linear infinite, blink 2s infinite alternate;
         }
         
         @keyframes blink {
@@ -59,21 +58,12 @@
                 opacity: 1;
             }
         }
-
-        @keyframes moveStars {
-            from {
-                transform: translateY(0) rotate(0deg);
-            }
-            to {
-                transform: translateY(-200vh) rotate(360deg);
-            }
-        }
         
-        @keyframes rotateStars {
-            from {
+        @keyframes rotateStar {
+            0% {
                 transform: rotate(0deg);
             }
-            to {
+            100% {
                 transform: rotate(360deg);
             }
         }
@@ -91,9 +81,11 @@
             document.getElementById("intermission").style.opacity = "0";
             const space = document.getElementById("space");
             
-            setInterval(() => {
+            for (let i = 0; i < 400; i++) {
                 createStar(space);
-            }, 200);
+            }
+            
+            document.addEventListener("mousemove", moveSpace);
         }
         
         function createStar(container) {
@@ -104,6 +96,14 @@
             star.style.top = Math.random() * 100 + "vh";
             star.style.left = Math.random() * 100 + "vw";
             container.appendChild(star);
+        }
+        
+        function moveSpace(event) {
+            const space = document.getElementById("space");
+            const xOffset = (window.innerWidth / 2 - event.clientX) / 50;
+            const yOffset = (window.innerHeight / 2 - event.clientY) / 50;
+            
+            space.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
         }
     </script>
 </body>
