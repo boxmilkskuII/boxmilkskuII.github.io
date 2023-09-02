@@ -40,6 +40,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            overflow: hidden;
         }
         
         .star {
@@ -77,32 +78,37 @@
     <div id="space"></div>
     
     <script>
+        let animationStarted = false;
+
         function startAnimation() {
-            document.getElementById("intermission").style.opacity = "0";
-            const space = document.getElementById("space");
-            
-            for (let i = 0; i < 400; i++) {
-                createStar(space);
+            if (!animationStarted) {
+                animationStarted = true;
+                document.getElementById("intermission").style.opacity = "0";
+                const space = document.getElementById("space");
+
+                for (let i = 0; i < 400; i++) {
+                    createStar(space);
+                }
+
+                document.addEventListener("mousemove", moveSpace);
             }
-            
-            document.addEventListener("mousemove", moveSpace);
         }
-        
+
         function createStar(container) {
             const star = document.createElement("div");
             star.classList.add("star");
             star.style.width = Math.random() * 5 + "px";
             star.style.height = star.style.width;
-            star.style.top = Math.random() * 100 + "vh";
-            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * window.innerHeight + "px";
+            star.style.left = Math.random() * window.innerWidth + "px";
             container.appendChild(star);
         }
-        
+
         function moveSpace(event) {
             const space = document.getElementById("space");
             const xOffset = (window.innerWidth / 2 - event.clientX) / 50;
             const yOffset = (window.innerHeight / 2 - event.clientY) / 50;
-            
+
             space.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
         }
     </script>
