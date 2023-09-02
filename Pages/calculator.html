@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <style>
+        /* Your CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            font-size: 18px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+
+        .button {
+            font-size: 18px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+            <button class="button" onclick="calculate()">=</button>
+            <button class="button" onclick="appendToDisplay('+')">+</button>
+            <button class="button" onclick="appendToDisplay('-')">-</button>
+            <button class="button" onclick="appendToDisplay('*')">*</button>
+            <button class="button" onclick="appendToDisplay('/')">/</button>
+            <button class="button" onclick="calculateSquareRoot()">√</button>
+            <button class="button" onclick="calculateSin()">sin</button>
+            <button class="button" onclick="calculateCos()">cos</button>
+            <button class="button" onclick="calculateTan()">tan</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+
+        function calculateSquareRoot() {
+            const inputValue = parseFloat(document.getElementById('display').value);
+            if (!isNaN(inputValue)) {
+                document.getElementById('display').value = Math.sqrt(inputValue);
+            }
+        }
+
+        function calculateSin() {
+            const inputValue = parseFloat(document.getElementById('display').value);
+            if (!isNaN(inputValue)) {
+                document.getElementById('display').value = Math.sin(inputValue * (Math.PI / 180));
+            }
+        }
+
+        function calculateCos() {
+            const inputValue = parseFloat(document.getElementById('display').value);
+            if (!isNaN(inputValue)) {
+                document.getElementById('display').value = Math.cos(inputValue * (Math.PI / 180));
+            }
+        }
+
+        function calculateTan() {
+            const inputValue = parseFloat(document.getElementById('display').value);
+            if (!isNaN(inputValue)) {
+                document.getElementById('display').value = Math.tan(inputValue * (Math.PI / 180));
+            }
+        }
+    </script>
+</body>
+</html>
