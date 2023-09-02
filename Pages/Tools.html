@@ -125,8 +125,7 @@
                 <button class="generate-button" onclick="generateQRCode()">Generate QR Code</button>
             </div>
             <div class="qr-code" id="qrcode"></div>
-            <!-- Download Button -->
-            <a class="download-button" id="download-link" style="display:none" download="qrcode.jpeg">Download QR Code</a>
+            <a class="download-button" id="download-link" style="display:none" download="qrcode.png">Download QR Code</a>
         </div>
     </div>
 
@@ -142,19 +141,15 @@
             const qrcode = new QRCode(qrCodeElement, {
                 text: text,
                 width: 200,
-                height: 200
+                height: 200,
+                typeNumber: -1,
+                correctLevel: QRCode.CorrectLevel.H
             });
 
-            const qrCodeImage = qrCodeElement.querySelector('img');
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = qrCodeImage.width;
-            canvas.height = qrCodeImage.height;
-            ctx.drawImage(qrCodeImage, 0, 0);
-            const jpegDataUrl = canvas.toDataURL('image/jpeg');
+            const qrCodeDataUrl = qrCodeElement.querySelector('img').src;
 
             downloadLink.style.display = 'block';
-            downloadLink.href = jpegDataUrl;
+            downloadLink.href = qrCodeDataUrl;
         }
     </script>
 </body>
