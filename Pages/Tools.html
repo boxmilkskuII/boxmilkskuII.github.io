@@ -135,16 +135,21 @@
     <script>
         function extractHTML() {
             const url = document.getElementById("urlInput").value;
+            const htmlCodeElement = document.getElementById("htmlCode");
+
+            htmlCodeElement.textContent = "";
 
             fetch(url)
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById("htmlCode").textContent = html;
+                    htmlCodeElement.textContent = html;
                 })
                 .catch(error => {
-                    document.getElementById("htmlCode").textContent = "Error fetching HTML code.";
+                    htmlCodeElement.textContent = "Error fetching HTML code.";
                 });
         }
     </script>
+</body>
+</html>
 </body>
 </html>
