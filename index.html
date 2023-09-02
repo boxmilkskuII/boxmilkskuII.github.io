@@ -40,7 +40,7 @@
             width: 200%;
             height: 100%;
             pointer-events: none;
-            animation: moveLeft 20s linear infinite, blink 2s infinite alternate;
+            animation: moveLeft 20s linear infinite alternate, blink 2s infinite alternate;
             overflow: hidden;
         }
         
@@ -61,13 +61,14 @@
         }
         
         @keyframes moveLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
+    0% {
+          transform: translateX(100%);
+     }
+     100% {
+          transform: translateX(-100%);
+      }
+  }
+        
     </style>
 </head>
 <body>
