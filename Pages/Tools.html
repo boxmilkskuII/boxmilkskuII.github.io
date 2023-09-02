@@ -1,169 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>boxmilkskull | HTML Code Extractor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            overflow: auto;
-            padding-top: 50px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-            padding: 1em 0;
-            border-bottom: 1px solid #007bff;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 0.5em;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 100px auto 0;
-            padding: 2em;
-            background-color: #292929;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            color: #dddddd;
-        }
-
-        .section {
-            margin: 1.5em 0;
-            border-left: 4px solid #007bff;
-            padding-left: 1em;
-        }
-
-        .section h3 {
-            font-size: 1.5em;
-            color: #007bff;
-            margin-bottom: 0.5em;
-        }
-
-        .section p {
-            font-size: 1.2em;
-        }
-
-        footer {
-            margin-top: 50px; 
-            text-align: center;
-            background-color: #121212;
-            color: #ffffff;
-            padding: 1em 0;
-            border-top: 1px solid #007bff;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .url-container {
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            margin-top: 20px;
-        }
-
-        .url-input {
-            flex: 1;
-            padding: 15px;
-            font-size: 18px; 
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        .url-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-            margin-top: 10px; /* Move the button down */
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .url-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <title>QR Code Generator</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>boxmilkskull | HTML Code Extractor</h1>
-    </header>
-    <div class="container">
-        <div class="url-container">
-            <input type="text" class="url-input" id="urlInput" placeholder="Enter URL">
-        </div>
-        <div class="button-container">
-            <button class="url-button" onclick="extractHTML()">Extract HTML</button>
-        </div>
-        <pre id="htmlCode"></pre>
+    <h1>QR Code Generator</h1>
+    <div>
+        <label for="text">Enter text or URL:</label>
+        <input type="text" id="text">
+        <button onclick="generateQRCode()">Generate QR Code</button>
     </div>
+    <div id="qrcode"></div>
 
     <script>
-        function extractHTML() {
-            const url = document.getElementById("urlInput").value;
-            const htmlCodeElement = document.getElementById("htmlCode");
-
-            htmlCodeElement.textContent = "Fetching HTML code...";
-
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Error fetching HTML code: " + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    htmlCodeElement.textContent = html;
-                })
-                .catch(error => {
-                    htmlCodeElement.textContent = error.message;
-                });
+        function generateQRCode() {
+            const text = document.getElementById('text').value;
+            const qrcode = new QRCode(document.getElementById('qrcode'), {
+                text: text,
+                width: 128,
+                height: 128
+            });
         }
     </script>
-</body>
-</html>
-</body>
-</html>
 </body>
 </html>
