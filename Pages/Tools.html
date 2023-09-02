@@ -74,44 +74,51 @@
             padding: 1em 0;
             border-top: 1px solid #007bff;
         }
-        .button {
-            display: inline-block;
+        
+        /* QR Code Generator Styles */
+        .qr-container {
+            text-align: center;
+        }
+
+        .url-input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .url-input {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .generate-button {
             padding: 10px 20px;
             background-color: #007bff;
             color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-right: 10px;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        .button:hover {
+        .generate-button:hover {
             background-color: #0056b3;
             transform: scale(1.05);
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .qr-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
         .qr-code {
             border: 2px solid #007bff;
-            padding: 10px;
+            padding: 20px;
             background-color: #fff;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
         }
 
         .qr-code img {
@@ -127,8 +134,12 @@
     </header>
     <div class="container">
         <div class="qr-container">
-            <input type="text" id="text" placeholder="Enter text or URL">
-            <button class="button" onclick="generateQRCode()">Generate QR Code</button>
+            <div class="url-input-container">
+                <input type="text" class="url-input" id="text" placeholder="Enter text or URL">
+            </div>
+            <div class="button-container">
+                <button class="generate-button" onclick="generateQRCode()">Generate QR Code</button>
+            </div>
             <div class="qr-code" id="qrcode"></div>
         </div>
     </div>
