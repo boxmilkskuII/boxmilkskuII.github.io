@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Continue Button</title>
+    <title>Loading Animation</title>
     <style>
         body {
             display: flex;
@@ -11,6 +11,24 @@
             margin: 0;
         }
         
+        .loading-container {
+            text-align: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
         .continue-button {
             background-color: #3498db;
             color: #fff;
@@ -20,6 +38,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.1s;
+            display: none;
         }
 
         .continue-button:hover {
@@ -29,9 +48,25 @@
         .continue-button:active {
             transform: translateY(3px);
         }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.loading-container').style.display = 'none';
+                document.querySelector('.continue-button').style.display = 'block';
+        }
     </style>
 </head>
 <body>
+    <div class="loading-container">
+        <p class="loading-text">Loading...</p>
+        <div class="loading-spinner"></div>
+    </div>
+    
     <button class="continue-button">Continue</button>
 </body>
 </html>
