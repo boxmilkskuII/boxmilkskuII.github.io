@@ -86,7 +86,7 @@
                 document.getElementById("intermission").style.opacity = "0";
                 const space = document.getElementById("space");
 
-                for (let i = 0; i < 400; i++) {
+                for (let i = 0; i < 800; i++) {
                     createStar(space);
                 }
 
@@ -100,7 +100,7 @@
             star.style.width = Math.random() * 5 + "px";
             star.style.height = star.style.width;
             star.style.top = Math.random() * window.innerHeight + "px";
-            star.style.left = Math.random() * window.innerWidth + "px";
+            star.style.left = Math.random() * (2 * window.innerWidth) + "px";
             container.appendChild(star);
         }
 
