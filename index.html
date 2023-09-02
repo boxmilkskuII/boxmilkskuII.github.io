@@ -37,9 +37,10 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 200%;
             height: 100%;
             pointer-events: none;
+            animation: moveLeft 20s linear infinite, blink 2s infinite alternate;
             overflow: hidden;
         }
         
@@ -48,7 +49,6 @@
             background-color: white;
             border-radius: 50%;
             pointer-events: none;
-            animation: moveLeft 5s linear infinite, blink 2s infinite alternate;
         }
         
         @keyframes blink {
@@ -62,10 +62,10 @@
         
         @keyframes moveLeft {
             0% {
-                transform: translateX(100vw);
+                transform: translateX(0);
             }
             100% {
-                transform: translateX(-100px);
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -100,12 +100,8 @@
             star.style.width = Math.random() * 5 + "px";
             star.style.height = star.style.width;
             star.style.top = Math.random() * window.innerHeight + "px";
-            star.style.left = window.innerWidth + "px";
+            star.style.left = Math.random() * window.innerWidth + "px";
             container.appendChild(star);
-
-            setTimeout(() => {
-                star.style.left = "-100px";
-            }, 100);
         }
 
         function moveSpace(event) {
