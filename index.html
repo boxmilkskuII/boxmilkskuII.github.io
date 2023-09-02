@@ -1,1 +1,144 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>boxmilkskull</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            overflow: auto;
+            padding-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em 0;
+            border-bottom: 1px solid #007bff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 0.5em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto 0;
+            padding: 2em;
+            background-color: #292929;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            color: #dddddd;
+        }
+
+        .section {
+            margin: 1.5em 0;
+            border-left: 4px solid #007bff;
+            padding-left: 1em;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #007bff;
+            margin-bottom: 0.5em;
+        }
+
+        .section p {
+            font-size: 1.2em;
+        }
+
+        footer {
+            margin-top: 50px; 
+            text-align: center;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 1em 0;
+            border-top: 1px solid #007bff;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>boxmilkskull</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h3>PROJECTS:</h3>
+            <p>None Currently</p>
+        </div>
+        <div class="section">
+            <h3>DISCORD SERVERS:</h3>
+            <p>I have way too many but here are a few.</p>
+            <p><a href="https://discord.gg/vFgZwczA" target="_blank" rel="noopener noreferrer" class="button">A Server that announces when roblox UGC limiteds hit the market.</a></p>
+            <p><a href="https://discord.gg/bBVeYw32WE" target="_blank" rel="noopener noreferrer" class="button">My inactive middleman service.</a></p>
+            <p><a href="https://discord.gg/JhSbvq45T9" target="_blank" rel="noopener noreferrer" class="button">My coming soon marketplace but right now just hold my vouches.</a></p>
+        </div>
+        <div class="section">
+            <h3>PROGRAMMING LANGUAGES:</h3>
+            <p>Python</p>
+            <p>HTML, CSS, JS</p>
+            <p>Nodejs</p>
+            <p>C++</p>
+            <p>C#</p>
+            <p>Go</p>
+        </div>
+        <div class="section">
+            <h3>ACCOUNTS:</h3>
+            <p><a href="https://github.com/boxmilkskull" target="_blank" rel="noopener noreferrer" class="button">My github page. [inactive]</a></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 boxmilkskull | Made With 💖 From boxmilkskull#1129</p>
+    </footer>
+</body>
+</html>
