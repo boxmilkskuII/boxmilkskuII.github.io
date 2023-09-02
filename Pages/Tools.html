@@ -96,23 +96,6 @@
             display: block;
             margin: 0 auto; 
         }
-        
-        .download-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-top: 20px; 
-        }
-
-        .download-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -125,7 +108,6 @@
                 <button class="generate-button" onclick="generateQRCode()">Generate QR Code</button>
             </div>
             <div class="qr-code" id="qrcode"></div>
-            <a class="download-button" id="download-link" style="display:none" download="qrcode.png">Download QR Code</a>
         </div>
     </div>
 
@@ -134,23 +116,14 @@
         function generateQRCode() {
             const text = document.getElementById('text').value;
             const qrCodeElement = document.getElementById('qrcode');
-            const downloadLink = document.getElementById('download-link');
             
             qrCodeElement.innerHTML = '';
 
             const qrcode = new QRCode(qrCodeElement, {
                 text: text,
                 width: 200,
-                height: 200,
-                correctLevel: QRCode.CorrectLevel.H
+                height: 200
             });
-
-            const qrCodeDataUrl = qrCodeElement.querySelector('img').src;
-
-            downloadLink.style.display = 'block';
-            downloadLink.href = qrCodeDataUrl;
-
-            qrCodeElement.style.display = 'block';
         }
     </script>
 </body>
