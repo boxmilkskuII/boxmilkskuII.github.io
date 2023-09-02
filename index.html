@@ -140,5 +140,12 @@
     <footer>
         <p>&copy; 2023 boxmilkskull | Made With 💖 From boxmilkskull#1129</p>
     </footer>
+    <script>
+        function disableRightClick(e) {
+            e.preventDefault();
+        }
+
+        document.addEventListener("contextmenu", disableRightClick);
+    </script>
 </body>
 </html>
