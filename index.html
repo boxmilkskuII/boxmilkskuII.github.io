@@ -9,6 +9,7 @@
             margin: 0;
             overflow: hidden;
             background-color: black;
+            font-family: Arial, sans-serif;
         }
         
         #intermission {
@@ -17,6 +18,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            opacity: 1;
+            transition: opacity 0.5s;
         }
         
         #startButton {
@@ -26,6 +29,8 @@
             font-size: 20px;
             border: none;
             cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
         }
         
         #space {
@@ -64,12 +69,14 @@
     
     <script>
         function startAnimation() {
-            document.getElementById("intermission").style.display = "none";
+            document.getElementById("intermission").style.opacity = "0";
             const space = document.getElementById("space");
             
             for (let i = 0; i < 200; i++) {
                 createStar(space);
             }
+            
+            document.addEventListener("mousemove", moveSpace);
         }
         
         function createStar(container) {
@@ -80,6 +87,14 @@
             star.style.top = Math.random() * 100 + "vh";
             star.style.left = Math.random() * 100 + "vw";
             container.appendChild(star);
+        }
+        
+        function moveSpace(event) {
+            const space = document.getElementById("space");
+            const xOffset = (window.innerWidth / 2 - event.clientX) / 50;
+            const yOffset = (window.innerHeight / 2 - event.clientY) / 50;
+            
+            space.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
         }
     </script>
 </body>
