@@ -1,72 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loading Animation</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .loading-container {
-            text-align: center;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(45deg, #ff4e50, #ff6b6b, #ffb08a, #ff8e71);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
 
-        .loading-text {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        .loading-spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 2s linear infinite;
-        }
-
-        .continue-button {
-            background-color: #3498db;
-            color: #fff;
-            padding: 20px 40px;
-            font-size: 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
-            display: none;
-        }
-
-        .continue-button:hover {
-            background-color: #2980b9;
-        }
-
-        .continue-button:active {
-            transform: translateY(3px);
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.loading-container').style.display = 'none';
-                document.querySelector('.continue-button').style.display = 'block';
-        }
-    </style>
+    .content {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div class="loading-container">
-        <p class="loading-text">Loading...</p>
-        <div class="loading-spinner"></div>
-    </div>
-    
-    <button class="continue-button">Continue</button>
+  <div class="content">
+    Wow, this is an attention-grabbing background!
+  </div>
 </body>
 </html>
