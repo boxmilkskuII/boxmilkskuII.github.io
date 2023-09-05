@@ -13,7 +13,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      cursor: url('Period.cur'), auto; /* Custom Cursor */
+      cursor: url('Period.cur'), auto; 
     }
 
     #overlay {
@@ -28,7 +28,7 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      cursor: url('Period.cur'), auto; /* Custom Cursor */
+      cursor: url('Period.cur'), auto;
     }
 
     #enter-button {
@@ -96,6 +96,19 @@
     .icon-container:hover .icon {
       transform: scale(1.2);
     }
+
+    @media screen and (max-width: 768px) {
+      #new-overlay-container {
+        padding: 10px;
+      }
+      #quote {
+        font-size: 18px;
+      }
+      #profile-pic {
+        width: 60px;
+        height: 60px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -158,10 +171,7 @@
         icon.classList.add("glow-icon");
       });
     </script>
-
-    </script>
-
-       <script>
+    <script>
       const titles = ["B_", "Bo", "Box_", "Box M", "Box Mi_", "Box Mil", "Box Milk_", "Box Milk S", "Box Milk Sk_", "Box Milk Sku", "Box Milk Skul_", "Box Milk Skull", "Box Milk Skull_", "Box Milk Skul", "Box Milk Sku_ ", "Box Milk Sk", "Box Milk S_", "Box Milk", "Box Mil_", "Box Mi", "Box M_", "Box", "Bo_"];
       let currentIndex = 0;
 
@@ -175,6 +185,5 @@
       }
       startAnimation();
     </script>
-    
   </body>
 </html>
