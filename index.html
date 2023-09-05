@@ -1,60 +1,97 @@
-er<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title></title>
     <style>
-        body {
-            text-align: center;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
+      body {
+        text-align: center;
+        background-image: url('https://media.tenor.com/VaZX9BSm9lIAAAAd/galaxy-star.gif');
+        background-color: #000000;
+        background-size: 180%;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-        #overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 1); /* Changed to black */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
+      #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
 
-        #enter-button {
-            font-family: 'Calibri', sans-serif;
-            font-size: 28px;
-            text-align: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            margin-top: 20px;
-            cursor: url('lv.cur'), auto;
-        }
+      #enter-button {
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        text-align: center;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        margin-top: 20px;
+        cursor: url('lv.cur'), auto;
+      }
+
+      #new-overlay-container {
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 10000;
+      }
+
+      #profile-pic {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 20px;
+      }
+
+      #quote {
+        color: #fff;
+        font-size: 24px;
+        margin: 10px;
+      }
+
+      #discord-widget {
+        margin-top: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="overlay">
-        <h1>Click To Continue...</h1>
-        <div id="enter-button"">Click to Enter...</div>
+      <h1>Click To Continue...</h1>
+      <div id="enter-button">Click to Enter...</div>
     </div>
-
-    
-
-    <audio id="music" controls autoplay style="display: none;">
-        <source src="ViolentCrimes.mp4" type="audio/mp4">
-        Your browser does not support the audio element.
+    <div id="new-overlay-container">
+      <div id="new-overlay">
+        <img src="https://cdn.discordapp.com/avatars/1098048549591195658/e55c3c2976ef5282c51688dabd5f25e9.webp?size=80" alt="Profile Picture" id="profile-pic">
+        <p id="quote">The Only Person Stopping You, Is You.</p>
+        <img src="https://discord.c99.nl/widget/theme-4/1098048549591195658.png" alt="Discord Widget" draggable="false" id="discord-widget">
+      </div>
+    </div>
+    <audio id="music" autoplay style="display: none;">
+      <source src="ViolentCrimes.mp4" type="audio/mp4"> Your browser does not support the audio element.
     </audio>
-
     <script>
-        document.getElementById("enter-button").addEventListener("click", function() {
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("music").play();
-        });
+      document.getElementById("new-overlay-container").style.display = "none";
+      document.getElementById("enter-button").addEventListener("click", function() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("new-overlay-container").style.display = "block";
+        document.getElementById("music").play();
+      });
     </script>
-</body>
+  </body>
 </html>
