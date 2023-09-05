@@ -25,7 +25,7 @@
             z-index: 9999;
         }
 
-        #play-button {
+        #enter-button {
             font-family: 'Calibri', sans-serif;
             font-size: 28px;
             text-align: center;
@@ -40,7 +40,7 @@
 <body>
     <div id="overlay">
         <h1>Click To Continue...</h1>
-        <div id="play-button"">Click to Enter</div>
+        <div id="enter-button"">Click to Enter...</div>
     </div>
 
     
@@ -52,9 +52,7 @@
 
     <script>
         document.getElementById("play-button").addEventListener("click", function() {
-            // Hide the overlay
             document.getElementById("overlay").style.display = "none";
-            // Play the music
             document.getElementById("music").play();
         });
     </script>
