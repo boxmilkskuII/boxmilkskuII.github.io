@@ -1,122 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-      body {
-        text-align: center;
-        background-image: url('https://media.tenor.com/VaZX9BSm9lIAAAAd/galaxy-star.gif');
-        background-color: #000000;
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        cursor: url('Period.cur'), auto;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      text-align: center;
+      background-image: url('https://media.tenor.com/VaZX9BSm9lIAAAAd/galaxy-star.gif');
+      background-color: #000000;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      cursor: url('Period.cur'), auto; /* Custom Cursor */
+    }
 
-      #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        cursor: url('Period.cur'), auto;
-      }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
 
-      #enter-button {
-        font-family: 'Calibri', sans-serif;
-        font-size: 28px;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        margin-top: 20px;
-        cursor: url('Period.cur'), auto;  
-      }
+    #enter-button {
+      font-family: 'Calibri', sans-serif;
+      font-size: 28px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      margin-top: 20px;  
+    }
 
-      #new-overlay-container {
-        background-color: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        border-radius: 10px;
-        z-index: 10000;
-        cursor: url('Period.cur'), auto;
-      }
+    #new-overlay-container {
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 10000;
+    }
 
-      #profile-pic {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin: 20px;
-        cursor: url('Period.cur'), auto;
-      }
+    #profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px;
+    }
 
-      #quote {
-        color: #fff;
-        font-size: 24px;
-        cursor: url('Period.cur'), auto;
-        margin: 10px;
-      }
+    #quote {
+      color: #fff;
+      font-size: 24px;
+      margin: 10px;
+    }
 
-      .glow-icon {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        cursor: pointer;
-        cursor: url('Period.cur'), auto;
-      }
+    .glow-icon {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
 
-      .icon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        cursor: url('Period.cur'), auto;
-      }
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
 
-      .icon {
-        font-size: 48px;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-        transition: transform 0.2s ease;
-        cursor: url('Period.cur'), auto;
-      }
+    .icon {
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+      transition: transform 0.2s ease;
+    }
 
-      .icon a {
-        text-decoration: none;
-        color: inherit;
-        cursor: url('Period.cur'), auto;
-      }
+    .icon a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      .icon a:visited {
-        color: inherit;
-        cursor: url('Period.cur'), auto;
-      }
+    .icon a:visited {
+      color: inherit;
+    }
 
-      .icon-container:hover .icon {
-        transform: scale(1.2);
-        cursor: url('Period.cur'), auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="overlay">
-      <div id="enter-button">Click to Enter...</div>
-    </div>
-    <div id="new-overlay-container">
-      <div id="new-overlay">
-        <img src="https://cdn.discordapp.com/avatars/1098048549591195658/e55c3c2976ef5282c51688dabd5f25e9.webp" alt="Profile Picture" id="profile-pic">
-        <p id="quote">The Only Person Stopping You From Becoming Successful, Is Yourself.</p>
-        <img src="https://discord.c99.nl/widget/theme-4/1098048549591195658.png" alt="Discord Widget" draggable="false" id="discord-widget">
+    .icon-container:hover .icon {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <div id="enter-button">Click to Enter...</div>
+  </div>
+  <div id="new-overlay-container">
+    <div id="new-overlay">
+      <img src="https://cdn.discordapp.com/avatars/1098048549591195658/e55c3c2976ef5282c51688dabd5f25e9.webp" alt="Profile Picture" id="profile-pic">
+      <p id="quote">The Only Person Stopping You From Becoming Successful, Is Yourself.</p>
+      <img src="https://discord.c99.nl/widget/theme-4/1098048549591195658.png" alt="Discord Widget" draggable="false" id="discord-widget">
         <div class="icon-container" id="tiktok-icon-container">
           <a href="https://tiktok.com/@reel.vids" target="_blank">
             <div class="icon" id="tiktok-icon">
