@@ -10,13 +10,49 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1); /* Changed to black */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #play-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Music Player</h1>
-    <audio autoplay>
+    <div id="overlay">
+        <h1>Click To Continue...</h1>
+        <button id="play-button">Play Music</button>
+    </div>
+
+    <audio id="music" controls autoplay style="display: none;">
         <source src="ViolentCrimes.mp4" type="audio/mp4">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        document.getElementById("play-button").addEventListener("click", function() {
+            // Hide the overlay
+            document.getElementById("overlay").style.display = "none";
+            // Play the music
+            document.getElementById("music").play();
+        });
+    </script>
 </body>
 </html>
