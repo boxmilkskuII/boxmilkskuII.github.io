@@ -196,13 +196,18 @@
       const ansElement = document.getElementById("ans");
 
       if (isUsingBrave) {
+        ansElement.textContent = "Yes, you are using Brave!";
+        // Send an alert
         alert("You are using Brave!");
+      } else {
+        ansElement.textContent = "No, you are not using Brave.";
+      }
     }
 
+    // Automatically check for Brave when the page loads
     window.addEventListener("load", function () {
       checkBrave();
     });
   </script>
-  
   </body>
 </html>
