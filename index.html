@@ -186,28 +186,31 @@
       startAnimation();
     </script>
 
-  <script>
+ <script>
     function isBrave() {
-      return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
+        return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
     }
 
     function checkBrave() {
-      const isUsingBrave = isBrave();
-      const ansElement = document.getElementById("ans");
+        const isUsingBrave = isBrave();
+        const notificationElement = document.getElementById("notification");
+        const enterButtonElement = document.getElementById("enter-button");
 
-      if (isUsingBrave) {
-        ansElement.textContent = "Yes, you are using Brave!";
-        // Send an alert
-        alert("You are using Brave!");
-      } else {
-        ansElement.textContent = "No, you are not using Brave.";
-      }
+        if (isUsingBrave) {
+            notificationElement.textContent = "You are using Brave!";
+            // Send an alert
+            alert("You are using Brave!");
+        } else {
+            notificationElement.textContent = "You are not using Brave.";
+            // Show the Enter button
+            enterButtonElement.style.display = "block";
+        }
     }
 
     // Automatically check for Brave when the page loads
     window.addEventListener("load", function () {
-      checkBrave();
+        checkBrave();
     });
-  </script>
+</script>
   </body>
 </html>
