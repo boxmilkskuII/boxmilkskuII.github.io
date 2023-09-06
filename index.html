@@ -185,5 +185,24 @@
       }
       startAnimation();
     </script>
+
+  <script>
+    function isBrave() {
+      return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
+    }
+
+    function checkBrave() {
+      const isUsingBrave = isBrave();
+      const ansElement = document.getElementById("ans");
+
+      if (isUsingBrave) {
+        alert("You are using Brave!");
+    }
+
+    window.addEventListener("load", function () {
+      checkBrave();
+    });
+  </script>
+  
   </body>
 </html>
