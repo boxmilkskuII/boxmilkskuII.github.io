@@ -134,6 +134,20 @@
         <source src="ViolentCrimes.mp4" type="audio/mp4"> Your browser does not support the audio element.
       </audio>
     </div>
+  <script>
+        function isBrave() {
+            return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
+        }
+
+        const ansElement = document.getElementById("ans");
+        const isUsingBrave = isBrave();
+
+        if (isUsingBrave) {
+            alert("You are using Brave!");
+        } else {
+            alert("Nope");
+        }
+    </script>
     <script>
       document.getElementById("new-overlay-container").style.display = "none";
       document.getElementById("enter-button").addEventListener("click", function() {
@@ -184,21 +198,6 @@
         setInterval(changeTitle, 500);
       }
       startAnimation();
-    </script>
-
- <script>
-        function isBrave() {
-            return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
-        }
-
-        const ansElement = document.getElementById("ans");
-        const isUsingBrave = isBrave();
-
-        if (isUsingBrave) {
-            alert("You are using Brave!");
-        } else {
-            alert("Nope");
-        }
     </script>
   </body>
 </html>
