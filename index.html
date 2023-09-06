@@ -187,30 +187,20 @@
     </script>
 
  <script>
-    function isBrave() {
-        return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
-    }
+        function isBrave() {
+            return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
+        }
 
-    function checkBrave() {
+        const ansElement = document.getElementById("ans");
         const isUsingBrave = isBrave();
-        const notificationElement = document.getElementById("notification");
-        const enterButtonElement = document.getElementById("enter-button");
 
         if (isUsingBrave) {
-            notificationElement.textContent = "You are using Brave!";
-            // Send an alert
+            ansElement.textContent = "Yes, you are using Brave!";
             alert("You are using Brave!");
         } else {
-            notificationElement.textContent = "You are not using Brave.";
-            // Show the Enter button
-            enterButtonElement.style.display = "block";
+            alert("nope")
+            ansElement.textContent = "No, you are not using Brave.";
         }
-    }
-
-    // Automatically check for Brave when the page loads
-    window.addEventListener("load", function () {
-        checkBrave();
-    });
-</script>
+    </script>
   </body>
 </html>
