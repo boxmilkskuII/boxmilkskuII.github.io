@@ -1,1 +1,207 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      cursor: url('dot.cur'), auto;
+    }
+    
+    body {
+      text-align: center;
+      background-image: url('https://media.tenor.com/VaZX9BSm9lIAAAAd/galaxy-star.gif');
+      background-color: #000000;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      cursor: url('dot.cur'), auto;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #enter-button {
+      font-family: 'Calibri', sans-serif;
+      font-size: 28px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      margin-top: 20px;  
+    }
+
+    #new-overlay-container {
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 10000;
+    }
+
+    #profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px;
+    }
+
+    #quote {
+      color: #fff;
+      font-size: 24px;
+      margin: 10px;
+    }
+
+    .glow-icon {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .icon {
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+      transition: transform 0.2s ease;
+    }
+
+    .icon a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .icon a:visited {
+      color: inherit;
+    }
+
+    .icon-container:hover .icon {
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      #new-overlay-container {
+        padding: 10px;
+      }
+      #quote {
+        font-size: 18px;
+      }
+      #profile-pic {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <div id="enter-button">Click to Enter...</div>
+  </div>
+  <div id="new-overlay-container">
+    <div id="new-overlay">
+      <img src="https://cdn.discordapp.com/avatars/1098048549591195658/e55c3c2976ef5282c51688dabd5f25e9.webp" alt="Profile Picture" id="profile-pic">
+      <p id="quote">The Only Person Stopping You From Becoming Successful, Is Yourself.</p>
+      <img src="https://discord.c99.nl/widget/theme-4/1098048549591195658.png" alt="Discord Widget" draggable="false" id="discord-widget">
+        <div class="icon-container" id="tiktok-icon-container">
+          <a href="https://tiktok.com/@reel.vids" target="_blank">
+            <div class="icon" id="tiktok-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="u_ee11cbb19052e40b07aac0ca060c23ee_tiktok__O5Vgm u_ee11cbb19052e40b07aac0ca060c23ee_point__dMTtV" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74a2.89 2.89 0 0 1 2.31-4.64a2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+      <audio id="music" autoplay style="display: none;">
+        <source src="ViolentCrimes.mp4" type="audio/mp4"> Your browser does not support the audio element.
+      </audio>
+    </div>
+  <script>
+        function isBrave() {
+            return window.navigator.brave !== undefined && window.navigator.brave.isBrave.name === "isBrave";
+        }
+
+        const ansElement = document.getElementById("ans");
+        const isUsingBrave = isBrave();
+
+        if (isUsingBrave) {
+            alert("⚠ YOU ARE USING BRAVE BROWSER ⚠ BRAVE BROWSER MESSES THIS SITE UP AFTER A FEW VISITS. TO FIX, RESET YOU'RE CACHE. (brave://settings/clearBrowserData?search=cache)");
+        }
+    </script>
+    <script>
+      document.getElementById("new-overlay-container").style.display = "none";
+      document.getElementById("enter-button").addEventListener("click", function() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("new-overlay-container").style.display = "flex";
+        document.getElementById("music").play();
+      });
+    </script>
+    <script>
+      document.getElementById("new-overlay-container").style.display = "none";
+      const tiktokIcon = document.getElementById("tiktok-icon");
+      const iconContainer = document.getElementById("tiktok-icon-container");
+      iconContainer.addEventListener("mouseenter", () => {
+        tiktokIcon.classList.add("hovered");
+      });
+      iconContainer.addEventListener("mouseleave", () => {
+        tiktokIcon.classList.remove("hovered");
+      });
+      tiktokIcon.addEventListener("click", () => {
+        if (tiktokIcon.classList.contains("hovered")) {
+          window.open("https://tiktok.com/@reel.vids", "_blank");
+        }
+      });
+    </script>
+    <script>
+      function startMusic() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("aud-mp").style.display = "block";
+        document.getElementById("aud-mp").play();
+        document.body.style.backdropFilter = "none";
+      }
+      document.body.style.backdropFilter = "none";
+      var icons = document.querySelectorAll(".icon");
+      icons.forEach(function(icon) {
+        icon.classList.add("glow-icon");
+      });
+    </script>
+    <script>
+      const titles = ["@B_", "@Bo", "@Box_", "@Box M", "@Box Mi_", "@Box Mil", "@Box Milk_", "@Box Milk S", "@Box Milk Sk_", "@Box Milk Sku", "@Box Milk Skul_", "@Box Milk Skull", "@Box Milk Skull_", "@Box Milk Skul", "@Box Milk Sku_ ", "@Box Milk Sk", "@Box Milk S_", "@Box Milk", "@Box Mil_", "@Box Mi", "@Box M_", "@Box", "@Bo_"];
+      let currentIndex = 0;
+
+      function changeTitle() {
+        document.title = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
+      }
+
+      function startAnimation() {
+        setInterval(changeTitle, 500);
+      }
+      startAnimation();
+    </script>
+  </body>
+</html>
