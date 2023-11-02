@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="wyd not in /care and /hellcat big 4KT">
+    <meta name="description" content="boxmilkskull">
     <title></title>
     <style>
       html,
@@ -303,11 +303,11 @@
       }
 
       #back-button {
-        position: fixed;
-        top: 0;
+        user-select: none;
+        position: absolute;
+        bottom: 10px;
         left: 50%;
-        transform: translateY(-200%);
-        transform: translateX(-65%);
+        transform: translateX(-50%);
         background: gray;
         border: 2px solid gray;
         border-radius: 10px;
@@ -363,7 +363,8 @@
       </main>
     </div>
   </div>
-  <button id="view-more-button" onclick="remove()">Shop</button>
+  <button id="view-more-button" style="display: none;" onclick="toggleShop()">Shop</button>
+    <div id="back-button" onclick="goBack()" style="display: none;">Back</div>
   <div id="hidden-text" style="transform: translateY(1000%);">
     <div class="container-wrapper">
       <div class="container">
@@ -413,21 +414,22 @@
               </ul>
             </ul>
       </div>
-      <div id="back-button" onclick="back()">Back</div>
       <script>
         function startMusic() {
-          document.getElementById("overlay").style.display = "none";
-          document.body.style.backdropFilter = "none";
-          const overlay = document.getElementById("overlay");
-          const clickBox = document.getElementById("click-box");
-          overlay.style.display = "none";
-          const animationDuration = 1000;
-          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-          clickBox.style.transform = "translateY(-100vh)";
-          setTimeout(function() {
-            clickBox.style.transform = "translateY(10%)";
-          }, 100);
-        }
+        document.getElementById("overlay").style.display = "none";
+        document.body.style.backdropFilter = "none";
+        const overlay = document.getElementById("overlay");
+        const clickBox = document.getElementById("click-box");
+        overlay.style.display = "none";
+        const animationDuration = 1000;
+        clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+        clickBox.style.transform = "translateY(-100vh)";
+        setTimeout(function() {
+          clickBox.style.transform = "translateY(10%)";
+        }, 100);
+        const shopButton = document.getElementById("view-more-button");
+        shopButton.style.display = "block";
+      }
       </script>
       </script>
       <script>
@@ -460,52 +462,54 @@
         });
       </script>
       <script>
-        function remove() {
-          const shopButton = document.getElementById("view-more-button");
-          shopButton.style.display = "none";
-          const hiddenText = document.getElementById("hidden-text");
-          hiddenText.style.display = "block";
-          document.getElementById("overlay").style.display = "none";
-          document.body.style.backdropFilter = "none";
-          const overlay = document.getElementById("overlay");
-          const clickBox = document.getElementById("click-box");
-          overlay.style.display = "none";
-          const animationDuration = 1000;
-          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-          clickBox.style.transform = "translateY(-100vh)";
-          setTimeout(function() {
-            clickBox.style.transform = "translateY(-175%)";
-            setTimeout(function() {
-              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
-              hiddenText.style.transform = "translateY(-25%)";
-            }, 100);
-          }, 100);
-        }
-      </script>
-      <script>
-        function back() {
-          const shopButton = document.getElementById("view-more-button");
-          shopButton.style.display = "block"; // Show the "Shop" button
-          const backButton = document.getElementById("back-button");
-          backButton.style.display = "none"; // Hide the back button
-          const hiddenText = document.getElementById("hidden-text");
-          hiddenText.style.display = "block";
-          document.getElementById("overlay").style.display = "none";
-          document.body.style.backdropFilter = "none";
-          const overlay = document.getElementById("overlay");
-          const clickBox = document.getElementById("click-box");
-          overlay.style.display = "none";
-          const animationDuration = 1000;
-          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-          clickBox.style.transform = "translateY(-100vh)";
-          setTimeout(function() {
-            clickBox.style.transform = "translateY(+10%)";
-            setTimeout(function() {
-              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
-              hiddenText.style.transform = "translateY(+185%)";
-            }, 100);
-          }, 100);
-        }
+        function toggleShop() {
+  const shopButton = document.getElementById("view-more-button");
+  shopButton.style.display = "none"; // Hide the "Shop" button
+  const backButton = document.getElementById("back-button");
+  backButton.style.display = "block"; // Show the "Back" button
+  const hiddenText = document.getElementById("hidden-text");
+  hiddenText.style.display = "block";
+  document.getElementById("overlay").style.display = "none";
+  document.body.style.backdropFilter = "none";
+  const overlay = document.getElementById("overlay");
+  const clickBox = document.getElementById("click-box");
+  overlay.style.display = "none";
+  const animationDuration = 1000;
+  clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+  clickBox.style.transform = "translateY(-100vh)";
+  setTimeout(function () {
+    clickBox.style.transform = "translateY(-175%)";
+    setTimeout(function () {
+      hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+      hiddenText.style.transform = "translateY(-25%)";
+    }, 100);
+  }, 100);
+}
+    
+function goBack() {
+  const shopButton = document.getElementById("view-more-button");
+  shopButton.style.display = "block"; // Show the "Shop" button
+  const backButton = document.getElementById("back-button");
+  backButton.style.display = "none"; // Hide the "Back" button
+  const hiddenText = document.getElementById("hidden-text");
+  hiddenText.style.display = "block";
+  document.getElementById("overlay").style.display = "none";
+  document.body.style.backdropFilter = "none";
+  const overlay = document.getElementById("overlay");
+  const clickBox = document.getElementById("click-box");
+  overlay.style.display = "none";
+  const animationDuration = 1000;
+  clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+  clickBox.style.transform = "translateY(-100vh)";
+  setTimeout(function () {
+    clickBox.style.transform = "translateY(+10%)";
+    setTimeout(function () {
+      hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+      hiddenText.style.transform = "translateY(+195%)";
+    }, 100);
+  }, 100);
+}
+
       </script>
       </body>
 </html>
