@@ -14,7 +14,7 @@
       }
 
       body {
-        background-image: url('https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        background-image: url('https://wallpaperbat.com/img/103644-download-wallpaper-2560x1440-night-city-window-rain-skyscrapers.jpg');
         background-size: cover;
         backdrop-filter: blur(0px);
         display: flex;
@@ -43,6 +43,8 @@
 
       #click-box {
         transform: translateY(-100vh);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid #333, 0.9;
         user-select: none;
         text-align: center;
       }
@@ -219,6 +221,102 @@
       body {
         overflow: hidden;
       }
+
+      #view-more-button {
+        user-select: none;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: gray;
+        border: 2px solid gray;
+        border-radius: 10px;
+        font-family: 'Calibri', sans-serif;
+        color: #fff;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #hidden-text {
+        position: absolute;
+        z-index: 9998;
+      }
+
+      #view-more-button:hover~#hidden-text {
+        transform: translateY(0);
+      }
+
+      .container {
+        user-select: none;
+        border: 2px solid #333, 0.9;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        transition: transform 0.3s ease-in-out;
+        margin-right: 20px;
+        /* Adjust the spacing between containers */
+      }
+
+      .container:last-child {
+        user-select: none;
+        margin-right: 0;
+        /* Remove margin for the last container */
+      }
+
+      .container:hover {
+        transform: scale(1.05);
+        user-select: none;
+      }
+
+      /* Add this style to create a container wrapper for the containers */
+      .container-wrapper {
+        display: flex;
+        user-select: none;
+        justify-content: space-between;
+        /* Adjust to your preferred spacing */
+        flex-wrap: wrap;
+        /* Allow containers to wrap to the next line if there's not enough space */
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        user-select: none;
+      }
+
+      li {
+        margin: 5px 0;
+        user-select: none;
+        font-family: 'Calibri', sans-serif;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+      }
+
+      p {
+        user-select: none;
+        font-family: 'Calibri', sans-serif;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+      }
+
+      #back-button {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateY(-200%);
+        transform: translateX(-65%);
+        background: gray;
+        border: 2px solid gray;
+        border-radius: 10px;
+        font-family: 'Calibri', sans-serif;
+        color: #fff;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        padding: 10px 20px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <div id="__next">
@@ -265,50 +363,149 @@
       </main>
     </div>
   </div>
-  <script>
-    function startMusic() {
-    document.getElementById("overlay").style.display = "none";
-    document.body.style.backdropFilter = "none";
-    const overlay = document.getElementById("overlay");
-      const clickBox = document.getElementById("click-box");
-      overlay.style.display = "none";
-      const animationDuration = 1000;
-      clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-      clickBox.style.transform = "translateY(-100vh)";
-      setTimeout(function() {
-        clickBox.style.transform = "translateY(10%)";
-      }, 100);
-    }
-  </script>
-  </script>
-  <script>
-    const titles = ["Loading", "Loading.", "Loading..", "Loading...", "Loading..", "Loading."];
-    let currentIndex = 0;
+  <button id="view-more-button" onclick="remove()">Shop</button>
+  <div id="hidden-text" style="transform: translateY(1000%);">
+    <div class="container-wrapper">
+      <div class="container">
+        <h1>Discord</h1>
+        <h2>Rating</h2>
+        <ul>
+          <li>⭐⭐⭐⭐⭐</li>
+          <ul>
+            <li>‎ </li>
+            <ul>
+              <ul>
+                <li>Discord Nitro</li>
+                <ul>
+                  <li>Discord Boosts</li>
+                  <ul>
+                    <li>Discord Accounts</li>
+                    <ul>
+                      <li>Discord Tools</li>
+                    </ul>
+                    <ul>
+                      <li>+ More</li>
+                    </ul>
+                  </ul>
+                </ul>
+              </ul>
+            </ul>
+      </div>
+      <div class="container">
+        <h1>Website</h1>
+        <h2>Rating</h2>
+        <ul>
+          <li>⭐⭐⭐⭐⭐</li>
+          <ul>
+            <li>‎ </li>
+            <ul>
+              <ul>
+                <li>Profile</li>
+                <ul>
+                  <li>Portfolio</li>
+                  <ul>
+                    <li>Shop</li>
+                    <ul>
+                      <li>+ More</li>
+                    </ul>
+                  </ul>
+                </ul>
+              </ul>
+            </ul>
+      </div>
+      <div id="back-button" onclick="back()">Back</div>
+      <script>
+        function startMusic() {
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(10%)";
+          }, 100);
+        }
+      </script>
+      </script>
+      <script>
+        const titles = ["Loading", "Loading.", "Loading..", "Loading...", "Loading..", "Loading."];
+        let currentIndex = 0;
 
-    function changeTitle() {
-      document.title = titles[currentIndex];
-      currentIndex = (currentIndex + 1) % titles.length;
-    }
+        function changeTitle() {
+          document.title = titles[currentIndex];
+          currentIndex = (currentIndex + 1) % titles.length;
+        }
 
-    function startAnimation() {
-      setInterval(changeTitle, 500);
-    }
-    startAnimation();
-  </script>
-  <script>
-    window.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'F12') {
-        e.preventDefault();
-      }
-    });
-    window.addEventListener('keydown', function(e) {
-      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-        e.preventDefault();
-      }
-    });
-  </script>
-  </body>
+        function startAnimation() {
+          setInterval(changeTitle, 500);
+        }
+        startAnimation();
+      </script>
+      <script>
+        window.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+        window.addEventListener('keydown', function(e) {
+          if (e.key === 'F12') {
+            e.preventDefault();
+          }
+        });
+        window.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+          }
+        });
+      </script>
+      <script>
+        function remove() {
+          const shopButton = document.getElementById("view-more-button");
+          shopButton.style.display = "none";
+          const hiddenText = document.getElementById("hidden-text");
+          hiddenText.style.display = "block";
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(-175%)";
+            setTimeout(function() {
+              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+              hiddenText.style.transform = "translateY(-25%)";
+            }, 100);
+          }, 100);
+        }
+      </script>
+      <script>
+        function back() {
+          const shopButton = document.getElementById("view-more-button");
+          shopButton.style.display = "block"; // Show the "Shop" button
+          const backButton = document.getElementById("back-button");
+          backButton.style.display = "none"; // Hide the back button
+          const hiddenText = document.getElementById("hidden-text");
+          hiddenText.style.display = "block";
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(+10%)";
+            setTimeout(function() {
+              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+              hiddenText.style.transform = "translateY(+185%)";
+            }, 100);
+          }, 100);
+        }
+      </script>
+      </body>
 </html>
