@@ -1,4 +1,4 @@
-<style>
+    <style>
       html,
       body {
         height: 100%;
@@ -243,6 +243,35 @@
         opacity: 1;
       }
 
+      #learn-more-button {
+        user-select: none;
+        position: absolute;
+        bottom: -10px; /* Adjust this value as needed to move it down */
+        left: 50%;
+        transform: translateX(-50%);
+        background: gray;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 10%;
+        font-family: 'Calibri', sans-serif;
+        color: #fff;
+        opacity: 0.7;
+        padding: 10px 20px;
+        transition: border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+      #learn-more-button:active {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 0.8;
+      }
+
+      #learn-more-button:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
+      }
+
       #hidden-text {
         position: absolute;
         z-index: 9998;
@@ -326,4 +355,4 @@
         border-color: rgba(255, 255, 255, 0.3);
         opacity: 1;
       }
-</style>
+    </style>
