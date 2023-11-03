@@ -14,7 +14,7 @@
       body {
         height: 100%;
         margin: 0;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       body {
@@ -26,7 +26,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       #overlay {
@@ -41,7 +41,7 @@
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        cursor: url('lv.cur'), auto;
+        
         backdrop-filter: blur(1px);
       }
 
@@ -59,7 +59,7 @@
         user-select: none;
         border-radius: 50%;
         margin-bottom: 10px;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       #quote {
@@ -69,14 +69,14 @@
         color: #fff;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
         margin: 0;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       #discord-widget {
         padding-top: 13px;
         padding-bottom: 13px;
         user-select: none;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       #click-to-enter {
@@ -87,7 +87,7 @@
         text-align: center;
         color: #fff;
         margin-top: 20px;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       .icon-container {
@@ -95,7 +95,7 @@
         display: inline-block;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         position: relative;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       .icon {
@@ -104,24 +104,23 @@
         user-select: none;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
         transition: transform 0.2s ease;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       .icon a {
         text-decoration: none;
         color: inherit;
-        cursor: url('lv.cur'), auto;
       }
 
       .icon a:visited {
         color: inherit;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       .icon-container:hover .icon {
         transform: scale(1.2);
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-        cursor: url('lv.cur'), auto;
+        
       }
 
       audio {
@@ -134,7 +133,7 @@
         color: #fff;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
         margin: 0;
-        cursor: url('lv.cur'), auto;
+        
       }
 
       @media (max-width: 768px) {
@@ -188,7 +187,7 @@
         right: 10px;
         user-select: none;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-        cursor: url('lv.cur'), auto;
+        
         z-index: 9999;
         transition: transform 0.2s ease;
       }
@@ -205,7 +204,7 @@
         user-select: none;
         font-family: 'Calibri', sans-serif;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-        cursor: url('lv.cur'), auto;
+        
         top: 10px;
         right: 10px;
         user-select: none;
@@ -233,22 +232,31 @@
         left: 50%;
         transform: translateX(-50%);
         background: gray;
-        border: 2px solid gray;
+        border: 2px solid rgba(255, 255, 255, 0.1);
         border-radius: 10px;
+        padding: 10%;
         font-family: 'Calibri', sans-serif;
         color: #fff;
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        opacity: 0.7;
         padding: 10px 20px;
+        transition: border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
         cursor: pointer;
+      }
+
+      #view-more-button:active {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 0.8;
+      }
+
+      #view-more-button:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
       }
 
       #hidden-text {
         position: absolute;
         z-index: 9998;
-      }
-
-      #view-more-button:hover~#hidden-text {
-        transform: translateY(0);
       }
 
       .container {
@@ -263,13 +271,11 @@
         font-family: 'Arial', sans-serif;
         transition: transform 0.3s ease-in-out;
         margin-right: 20px;
-        /* Adjust the spacing between containers */
       }
 
       .container:last-child {
         user-select: none;
         margin-right: 0;
-        /* Remove margin for the last container */
       }
 
       .container:hover {
@@ -277,14 +283,11 @@
         user-select: none;
       }
 
-      /* Add this style to create a container wrapper for the containers */
       .container-wrapper {
         display: flex;
         user-select: none;
         justify-content: space-between;
-        /* Adjust to your preferred spacing */
         flex-wrap: wrap;
-        /* Allow containers to wrap to the next line if there's not enough space */
       }
 
       ul {
@@ -313,13 +316,26 @@
         left: 50%;
         transform: translateX(-50%);
         background: gray;
-        border: 2px solid gray;
+        border: 2px solid rgba(255, 255, 255, 0.1);
         border-radius: 10px;
+        padding: 10%;
         font-family: 'Calibri', sans-serif;
         color: #fff;
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        opacity: 0.7;
         padding: 10px 20px;
+        transition: border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
         cursor: pointer;
+      }
+
+      #back-button:active {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 0.8;
+      }
+
+      #back-button:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
       }
     </style>
   </head>
@@ -368,7 +384,7 @@
     </div>
   </div>
   <button id="view-more-button" style="display: none;" onclick="toggleShop()">Shop</button>
-    <div id="back-button" onclick="goBack()" style="display: none;">Back</div>
+  <div id="back-button" onclick="goBack()" style="display: none;">Back</div>
   <div id="hidden-text" style="transform: translateY(1000%);">
     <div class="container-wrapper">
       <div class="container">
@@ -420,20 +436,20 @@
       </div>
       <script>
         function startMusic() {
-        document.getElementById("overlay").style.display = "none";
-        document.body.style.backdropFilter = "none";
-        const overlay = document.getElementById("overlay");
-        const clickBox = document.getElementById("click-box");
-        overlay.style.display = "none";
-        const animationDuration = 1000;
-        clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-        clickBox.style.transform = "translateY(-100vh)";
-        setTimeout(function() {
-          clickBox.style.transform = "translateY(10%)";
-        }, 100);
-        const shopButton = document.getElementById("view-more-button");
-        shopButton.style.display = "block";
-      }
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(10%)";
+          }, 100);
+          const shopButton = document.getElementById("view-more-button");
+          shopButton.style.display = "block";
+        }
       </script>
       </script>
       <script>
@@ -467,53 +483,52 @@
       </script>
       <script>
         function toggleShop() {
-  const shopButton = document.getElementById("view-more-button");
-  shopButton.style.display = "none"; // Hide the "Shop" button
-  const backButton = document.getElementById("back-button");
-  backButton.style.display = "block"; // Show the "Back" button
-  const hiddenText = document.getElementById("hidden-text");
-  hiddenText.style.display = "block";
-  document.getElementById("overlay").style.display = "none";
-  document.body.style.backdropFilter = "none";
-  const overlay = document.getElementById("overlay");
-  const clickBox = document.getElementById("click-box");
-  overlay.style.display = "none";
-  const animationDuration = 1000;
-  clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-  clickBox.style.transform = "translateY(-100vh)";
-  setTimeout(function () {
-    clickBox.style.transform = "translateY(-175%)";
-    setTimeout(function () {
-      hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
-      hiddenText.style.transform = "translateY(-25%)";
-    }, 100);
-  }, 100);
-}
-    
-function goBack() {
-  const shopButton = document.getElementById("view-more-button");
-  shopButton.style.display = "block"; // Show the "Shop" button
-  const backButton = document.getElementById("back-button");
-  backButton.style.display = "none"; // Hide the "Back" button
-  const hiddenText = document.getElementById("hidden-text");
-  hiddenText.style.display = "block";
-  document.getElementById("overlay").style.display = "none";
-  document.body.style.backdropFilter = "none";
-  const overlay = document.getElementById("overlay");
-  const clickBox = document.getElementById("click-box");
-  overlay.style.display = "none";
-  const animationDuration = 1000;
-  clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-  clickBox.style.transform = "translateY(-100vh)";
-  setTimeout(function () {
-    clickBox.style.transform = "translateY(+10%)";
-    setTimeout(function () {
-      hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
-      hiddenText.style.transform = "translateY(+195%)";
-    }, 100);
-  }, 100);
-}
+          const shopButton = document.getElementById("view-more-button");
+          shopButton.style.display = "none";
+          const backButton = document.getElementById("back-button");
+          backButton.style.display = "block";
+          const hiddenText = document.getElementById("hidden-text");
+          hiddenText.style.display = "block";
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(-175%)";
+            setTimeout(function() {
+              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+              hiddenText.style.transform = "translateY(-25%)";
+            }, 100);
+          }, 100);
+        }
 
+        function goBack() {
+          const shopButton = document.getElementById("view-more-button");
+          shopButton.style.display = "block";
+          const backButton = document.getElementById("back-button");
+          backButton.style.display = "none";
+          const hiddenText = document.getElementById("hidden-text");
+          hiddenText.style.display = "block";
+          document.getElementById("overlay").style.display = "none";
+          document.body.style.backdropFilter = "none";
+          const overlay = document.getElementById("overlay");
+          const clickBox = document.getElementById("click-box");
+          overlay.style.display = "none";
+          const animationDuration = 1000;
+          clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+          clickBox.style.transform = "translateY(-100vh)";
+          setTimeout(function() {
+            clickBox.style.transform = "translateY(+10%)";
+            setTimeout(function() {
+              hiddenText.style.transition = `transform ${animationDuration}ms ease-in-out`;
+              hiddenText.style.transform = "translateY(+195%)";
+            }, 100);
+          }, 100);
+        }
       </script>
       </body>
 </html>
